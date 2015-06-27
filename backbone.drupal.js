@@ -104,9 +104,10 @@ Backbone.Drupal.Auth = (function(Backbone, $, _){
                 }
 
                 // Define specific parametres to be used in all future request.
-                $.ajaxSetup(settings);
+                jQuery.ajaxSetup(settings);
 
-                status=true;
+                // Change 'status' value to authenticated user's {user.uid}.
+                status=data.user.uid;
               }
           });
         }
